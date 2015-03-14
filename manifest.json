@@ -1,0 +1,42 @@
+{
+	"manifest_version": 2,
+	"name": "Zukachan",
+	"version": "0.1",
+	"description": "2chを少し見やすくするぜ。",
+	
+	"icons":
+	{
+		"16": "icons/mafia16.png",
+		"48": "icons/mafia48.png",
+		"128": "icons/mafia128.png"
+	},
+	
+	"content_scripts":
+	[
+		{
+			"matches":
+			[
+				"http://*.2ch.net/*",
+				"http://*.bbspink.com/*"
+			],
+			
+			"js":
+			[
+				"insert.js"
+			],
+			
+			"run_at": "document_end"
+		}
+	],
+	
+	"web_accessible_resources":
+	[
+		"main.js"
+	],
+	
+	"permissions":
+	[
+		"http://*.2ch.net/*",
+		"http://*.bbspink.com/*"
+	]
+}
